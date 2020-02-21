@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.accp.springmvc_2.dao.GradeMapper" >
+  <insert id="add" parameterType="com.accp.springmvc_2.pojo.Grade" >
+     insert into grade ( stuid, score, 
+      time)
+    values
+ 	 <foreach collection="scores" item="temp" separator=",">
+				( #{temp.stuid,jdbcType=INTEGER}, #{temp.score,jdbcType=REAL}, 
+      #{temp.time,jdbcType=DECIMAL})
+		</foreach>
+  
+  </insert>
+  
+</mapper>
