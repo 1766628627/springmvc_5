@@ -29,6 +29,7 @@ public class DomenAction {
 	@GetMapping("domen/{pageNum}")
 	public PageInfo<Domen> querybyid(@PathVariable Integer pageNum){
 		System.out.println("第一次修改");
+		System.out.println("第二次修改");
 		return  biz.pageInfo(pageNum, 3);
 		
 	}
